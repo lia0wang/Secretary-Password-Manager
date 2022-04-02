@@ -4,5 +4,11 @@ if (modal_wrapper) {
         const modal = document.getElementById(modal_id);
         modal.style.display = "flex";
         modal_wrapper.style.display = "flex";
+
+        const close_button = document.getElementById("close-modal");
+        close_button.addEventListener('click', () => {
+            modal.style.display = "none";
+            modal_wrapper.style.display = "none";
+        })
     }
 }
