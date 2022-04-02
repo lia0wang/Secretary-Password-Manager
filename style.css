@@ -117,7 +117,7 @@ footer{
     padding: 5px;
 }
 
-#login-modal{
+#login-modal, #register-modal{
     background-color: var(--global-background-color);
     display: flex;
     flex-direction: column;

@@ -23,7 +23,7 @@
                 <li><a href="">Home</a></li>
                 <li><a herf="">About</a></li>
                 <li><a href="javascript:;" onclick="display_modal('login-modal');">Login</a></li>
-                <li><a href="">Register</a></li>
+                <li><a href="javascript:;" onclick="display_modal('register-modal');">Register</a></li>
             </ul>
         </nav>
     </header>
@@ -31,19 +31,41 @@
     <!-- Modals Block-->
     <div class="modals-wrapper">
         <span id="close-modal" title="close"><i class="fa fa-times"></i></span>
+        
         <!-- login modal -->
         <div class="modal" id="login-modal">
             <form action=""> 
-                <div class="modal-header">
-                    <h2>Login</h2>
-                    <input type="text" name="username" placeholder="username">
-                    <input type="email" name="email" placeholder="email">
-                    <input type="submit" value="login">
-                </div
+                <h2>Login</h2>
+                <input type="text" name="username" placeholder="username">
+                <input type="password" name="password" placeholder="password">
+                <input type="submit" value="login">
             </form>  
         </div>
-    </div>
+
+        <!-- register modal -->
+        <div class="modal" id="register-modal">
+            <form action=""> 
+                <h2>Register</h2>
+                <input type="text" name="username" placeholder="username">
+                <input type="email" name="email" placeholder="email">
+                <input type="password" name="password" placeholder="password">
+                <input type="password2" name="password2" placeholder="confirm password">
+                <input type="submit" value="register"> 
+            </form>  
+        </div>
     
+        <!-- login modal
+        <div class="modal" id="login-modal">
+            <form action=""> 
+                <h2>Login</h2>
+                <input type="text" name="username" placeholder="username">
+                <input type="password" name="password" placeholder="password">
+                <input type="submit" value="login">
+            </form>  
+        </div> -->
+
+    </div>
+
     <!-- Footer Block-->
     <footer>
         <a href="">
