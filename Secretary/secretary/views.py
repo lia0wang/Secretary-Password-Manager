@@ -75,4 +75,17 @@ def home(request):
                     "user" :new_login,
                 })
 
+        elif "confirm" in request.POST:
+            input_code = request.POST.get("code")
+            user = request.POST.get("user")
+            if input_code != global_OTP:
+                msg = f"Verification Failed:{input_code} is wrong"
+                messages.error(request, msg)
+                return HttpResponseRedirect(request.path)
+            else:
+                login(request, User.objects.get(username=user))
+                msg = f"Login succeeded: {request.user}, welcome to Secretary"
+                messages.success(request, msg)
+                return HttpResponseRedirect(request.path)
+
     return render(request, "home.html", {})

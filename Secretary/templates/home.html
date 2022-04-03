@@ -56,6 +56,20 @@
     </div>
   {% endif %}
 
+    <!--Confirm email-->
+    {% if code %}
+    <div style="text-align: center;">
+        <form action="." method="POST" role="form">
+            {% csrf_token %}
+            <h2>Please confirm your email</h2>
+            <p>Check your email and get the OTP</p>
+            <input type="text" name="code" placeholder="enter the 6 digit OTP ...">
+            <input type="text" hidden="true" name="user" value="{{user.username}}">
+            <input type="submit" value="Confirm" name="confirm">
+        </form>
+    </div>
+    {% endif %}
+
     <!-- Modals Block-->
     <div class="modals-wrapper">
         <span id="close-modal" title="close"><i class="fa fa-times"></i></span>
