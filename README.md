@@ -40,13 +40,16 @@
 
 - [ ] The web app should has following functions:
   
-  - [ ] Login
+  - [x] Login
+    - [x] Return msg when username or password is incorrect
+    - [x] Use OTP (HOST is outlook) to send confirmation email
   - [x] Register
     - [x] Return msg when duplicated username
     - [x] Return msg when passwords do not match
     - [x] Return msg when duplicated email
     - [x] Welome msg when register successfully
-  - [ ] Logout
+  - [x] Logout
+    - [x] Return msg when loggout
   - [ ] Add a new password
   - [ ] Delete a password
   - [ ] Update a password
