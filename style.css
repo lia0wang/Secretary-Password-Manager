@@ -7,7 +7,7 @@
 :root{
     --global-background-color: #000000;
     --link-background-color: #071f4e;
-    --global-color-hover: #feaa00;
+    --global-color-hover: #d9850f;
     --global-color-card: #0ac5a0;
     --global-color-text: #ffffff;
     --global-footer-bg: #000000;
@@ -94,7 +94,7 @@ footer{
     position: fixed;;
     width: 100%;
     height: 100%;
-    background-color: var(--global-color-text);
+    background-color: var(--global-color-card);
     display: none;
     justify-content: center;
     align-items: center;
