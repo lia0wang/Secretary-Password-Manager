@@ -5,11 +5,22 @@ function display_modal(modal_id) {
     modal.style.display = "flex";
     modal_wrapper.style.display = "flex";
 
+    // query all the modals
+    const modals = document.querySelectorAll('.modal');
+    // for each modal in modals array
+    modals.forEach(modal => {
+        // if the modal_id is not the current modal_id
+        // close it
+        if (modal.id !== modal_id) {
+            modal.style.display = "none";
+        }
+    });
+
     const close_button = document.getElementById("close-modal");
     close_button.addEventListener('click', () => {
         modal.style.display = "none";
         modal_wrapper.style.display = "none";
-    })
+    });
 }
 
 const copies = document.querySelectorAll(".copy");
