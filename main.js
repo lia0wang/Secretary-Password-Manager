@@ -20,7 +20,10 @@ function display_modal(modal_id) {
     close_button.addEventListener('click', () => {
         modal.style.display = "none";
         modal_wrapper.style.display = "none";
+    document.querySelector('header').style.display = "flex";
     });
+
+    document.querySelector('header').style.display = "flex";
 }
 
 const copies = document.querySelectorAll(".copy");
@@ -31,3 +34,20 @@ copies.forEach(copy => {
         document.execCommand("copy");
     }
 })
+
+const actions = document.querySelectorAll(".action");
+if(actions){
+    actions.forEach(action => {
+        action.onclick = () => {
+            const links = actions.querySelectorAll(".link");
+            links.forEach(link => {
+                link.style.display = "flex";
+            })
+            setTimeout(function(){
+                links.forEach(link => {
+                    link.style.display = "none";
+                })}, 3000);
+            }
+        }
+    })
+}

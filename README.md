@@ -7,7 +7,8 @@
 ## Ideas
 
 - A simple password manager python script is not enough for me
-- So I searched some sources and found the project that inspired me:
+- But I haven't completely learned html and css yet
+- So I searched some open sources projects and found the most suitable one that inspired me:
   - https://www.youtube.com/watch?v=z87LjWauDvI
 
 ## Changes I made
