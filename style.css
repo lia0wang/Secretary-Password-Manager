@@ -6,13 +6,16 @@
 
 :root{
     --global-background-color: #000000;
-    --link-background-color: #f70606;
-    --global-color-hover: rgb(5, 250, 176);
-    --global-color-text: rgb(246, 247, 244);
+    --link-background-color: #071f4e;
+    --global-color-hover: #feaa00;
+    --global-color-card: #0ac5a0;
+    --global-color-text: #ffffff;
+    --global-footer-bg: #000000;
     --gray-color: #ccc;
 }
 
 html{
+    font-family: 'Courier New', Courier, monospace;
     background-color: var(--global-background-color);
     color: var(--global-color-text);
 }
@@ -82,7 +85,7 @@ footer{
     left: 0;
     position: fixed;
     width: 100%;
-    background-color: black;
+    background-color: var(--global-footer-bg);
     box-shadow: 0 -8px 15px -3px var(--gray-color);
 }
 
@@ -127,7 +130,7 @@ footer{
     align-items: center;
 }
 
-#password-modal{
+#password-modal, #add-password-modal{
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -137,4 +140,48 @@ footer{
 
 .copy{
     cursor: pointer;
+}
+
+.container{
+    margin-top: 2rem;
+    padding: 0 1.5rem;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-bottom: 8rem;
+}
+
+.card{
+    background-color: var(--global-color-card);
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.actions{
+    padding-bottom: 0.5rem;
+    font-size: 0.7rem;
+    margin: auto;
+    color: black;
+}
+
+.actions a{
+    display: none;
+    background-color: var(--link-background-color);
+    flex-direction: column;
+    padding: 0.1rem;
+    align-items: center;
+}
+
+.actions:hover .action-item{
+    display: flex;
+}
+
+.name{
+    color: black;
+    padding-top: 0.5rem;
+    font-size: 0.7rem;
+    margin: auto;
 }
