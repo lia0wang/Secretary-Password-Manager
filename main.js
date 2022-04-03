@@ -12,3 +12,12 @@ if (modal_wrapper) {
         })
     }
 }
+
+const copies = document.querySelectorAll(".copy");
+copies.forEach(copy => {
+    copy.onclick = () => {
+        let element_to_copy = copy.previousElementSibling;
+        element_to_copy.select();
+        document.execCommand("copy");
+    }
+})

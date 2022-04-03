@@ -104,10 +104,10 @@ footer{
     width: 50%;
     height: 50%;
     border-radius: 30px;
-    padding: 1rem;
+    padding: 2rem;
     box-shadow: 0 8px 15px -3px var(--global-background-color);
 }
-
+  
 #close-modal{
     border-radius: 50px;
     background-color: var(--link-background-color);
@@ -125,4 +125,16 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#password-modal{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.copy{
+    cursor: pointer;
 }
