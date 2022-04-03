@@ -20,10 +20,9 @@ function display_modal(modal_id) {
     close_button.addEventListener('click', () => {
         modal.style.display = "none";
         modal_wrapper.style.display = "none";
-    document.querySelector('header').style.display = "flex";
+    document.querySelector("header").style.display = "unset";
     });
-
-    document.querySelector('header').style.display = "flex";
+    document.querySelector('header').style.display = "none";
 }
 
 const copies = document.querySelectorAll(".copy");
@@ -35,11 +34,11 @@ copies.forEach(copy => {
     }
 })
 
-const actions = document.querySelectorAll(".action");
+const actions = document.querySelectorAll(".actions");
 if(actions){
     actions.forEach(action => {
         action.onclick = () => {
-            const links = actions.querySelectorAll(".link");
+            const links = actions.querySelectorAll("a");
             links.forEach(link => {
                 link.style.display = "flex";
             })
@@ -47,7 +46,6 @@ if(actions){
                 links.forEach(link => {
                     link.style.display = "none";
                 })}, 3000);
-            }
         }
     })
 }
