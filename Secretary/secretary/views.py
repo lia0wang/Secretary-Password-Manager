@@ -14,22 +14,18 @@ def home(request):
             email = request.POST.get("email")
             password = request.POST.get("password")
             password2 = request.POST.get("password2")
-
             if password != password2: 
                 msg = "Passwords do not match!"
                 messages.error(request, msg)
                 return HttpResponseRedirect(request.path)
-
             elif User.objects.filter(username=username).exists():
                 msg = f"Username:{username} already exists!"
                 messages.error(request, msg)
                 return HttpResponseRedirect(request.path)
-
             elif User.objects.filter(email=email).exists():
                 msg = f"Email:{email} already exists!"
                 messages.error(request, msg)
                 return HttpResponseRedirect(request.path)
-
             else:
                 User.objects.create_user(username, email, password)
                 new_user = authenticate(request, username=username, password=password2)
@@ -38,5 +34,11 @@ def home(request):
                     msg = f"Hey, {username}! Welcome to Secretary!"
                     messages.success(request, msg)
                     return HttpResponseRedirect(request.path)
+
+        elif "logout" in request.POST:
+            msg = f"Logout successfully! Username:{request.user}"
+            logout(request)
+            messages.success(request, msg)
+            return HttpResponseRedirect(request.path)
 
     return render(request, "home.html", {})

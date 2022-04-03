@@ -8,8 +8,7 @@
 
 - A simple password manager python script is not enough for me
 - But I haven't completely learned html and css yet
-- So I searched some open sources projects and found the most suitable one that inspired me:
-  - https://www.youtube.com/watch?v=z87LjWauDvI
+- So I searched some open sources projects and found the most suitable one that inspired me: https://www.youtube.com/watch?v=z87LjWauDvI
 
 ## Changes I made
 
@@ -42,7 +41,11 @@
 - [ ] The web app should has following functions:
   
   - [ ] Login
-  - [ ] Register
+  - [x] Register
+    - [x] Return msg when duplicated username
+    - [x] Return msg when passwords do not match
+    - [x] Return msg when duplicated email
+    - [x] Welome msg when register successfully
   - [ ] Logout
   - [ ] Add a new password
   - [ ] Delete a password

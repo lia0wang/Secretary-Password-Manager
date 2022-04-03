@@ -23,10 +23,19 @@
             </div>
             <ul> 
                 <li><a href="">Home</a></li>
+                {% if request.user.is_anonymous %}
                 <li><a href="javascript:;" onclick="display_modal('login-modal');">Login</a></li>
                 <li><a href="javascript:;" onclick="display_modal('register-modal');">Register</a></li>
+                {% else %}
+                <li><a href="javascript:;" onclick="document.getElementById('logout-btn').click();">Logout</a></li>
+                <form hidden="true" action="." method="POST">
+                    {% csrf_token %}
+                    <input type="submit" id="logout-btn" name="logout">
+                </form>
+
                 <li><a href="javascript:;" onclick="display_modal('password-modal');">View</a></li>
                 <li><a href="javascript:;" onclick="display_modal('add-password-modal');">Add</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
@@ -53,10 +62,11 @@
         
         <div class="modal" id="login-modal">
             <form action=""> 
+                {% csrf_token %}
                 <h2>Login</h2>
                 <input type="text" name="username" placeholder="username">
                 <input type="password" name="password" placeholder="password">
-                <input type="submit" value="login">
+                <input type="submit" value="login" name="login-form">
             </form>  
         </div>
 
