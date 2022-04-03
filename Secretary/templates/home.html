@@ -61,7 +61,7 @@
         <span id="close-modal" title="close"><i class="fa fa-times"></i></span>
         
         <div class="modal" id="login-modal">
-            <form action=""> 
+            <form action="." role="form" method="POST">
                 {% csrf_token %}
                 <h2>Login</h2>
                 <input type="text" name="username" placeholder="username">
