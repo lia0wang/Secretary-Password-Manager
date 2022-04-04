@@ -44,18 +44,17 @@
 
 - [ ] A web app password manager that can be used on any device
   
-  - Implemented by the deployment on a server
+  - [ ] Make a deployment on a server
 
-- [ ] People are able to interact with it through the ui
+- [x] People are able to interact with it through the UI
   
-  - Implemented in frontend
+  - [x] Implement front-end
 
-- [ ] The password manager should be secure
+- [x] The password manager should be secure
   
-  - Implemented in the backend
-  - Improved the algorithm and methods for the password security
+  - [x] Use **RSA** algorithm and methods for the password security in the backend
 
-- [ ] The web app should has following functions:
+- [x] The web app should has following functions:
   
   - [x] **Login**
     - [x] Return msg when username or password is incorrect
