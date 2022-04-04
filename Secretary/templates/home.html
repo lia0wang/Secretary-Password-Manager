@@ -40,21 +40,34 @@
         </nav>
     </header>
 
+    <div style="text-align: center;margin-top: 2rem;">
+        <h3>Welcome to Secretary</h3>
+    </div>
+
+    <div style="text-align: center;margin-top: 1rem;">
+        <h4>I am your personal password manager <3</h4>
+    </div>
+
+    <div style="text-align: center;margin-top: 5rem;">
+        <image src="../static/animation.gif" alt=""
+            width="200"    
+            hight="200">
+    </div>
 
     {% if messages %}
-    <div class="messages" style="text-align: center;">
+        <div class="messages" style="text-align: center;">
         {% for message in messages %}
-          <p>
-              {% if message.tags == "error" %}
-                <i class="fa fa-exclamation" aria-hidden="true"></i>
-                {% else %}
-                <i class="fa fa-check" aria-hidden="true"></i>
-              {% endif %}
-              &nbsp;{{message}}
-          </p>
-        {% endfor %}
-    </div>
-  {% endif %}
+            <p>
+                {% if message.tags == "error" %}
+                    <i class="fa fa-exclamation" aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                {% endif %}
+                &nbsp;{{message}}
+            </p>
+            {% endfor %}
+        </div> 
+    {% endif %}
 
     <!--Confirm email-->
     {% if code %}
@@ -95,13 +108,6 @@
                 <input type="submit" value="register" name="register-form">
             </form>  
         </div>
-    
-        <div class="modal" id="password-modal">
-                <h2>URL or Name</h2>
-                <img weight="80" height="80" src="https://cdn.pixabay.com/photo/2016/04/13/14/27/google-chrome-1326908_960_720.png" alt="">
-                <input type="email" name="email" placeholder="email"><i class="fas fa-copy copy" title="copy to clipboard"></i>
-                <input type="password" name="username" value="password"><i class="fas fa-copy copy" title="copy to clipboard"></i>
-        </div>
       
         <div class="modal" id="add-password-modal">
             <form action="." role="form" method="POST">
@@ -117,114 +123,27 @@
     </div>
 
     <div class="container">
+
+        {% for password in passwords %}
         <div class="card">
             <div class="actions">&nbsp;Actions <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                <a href="" class="action-item">Delete</a>
-                <a href="" class="action-item">View</a>
-                <a href="" class="action-item">Update</a>
+                <a href="javascript:;" onclick="document.getElementById('delete-btn{{password.id}}').click();" class="action-item">Delete</a>
+                <form hidden="true" action="." method="POST">
+                    {% csrf_token %}
+                    <input type="text" hidden="true" name="password-id" value="{{password.id}}">
+                    <input type="submit" id="delete-btn{{password.id}}" name="delete">
+                </form>
             </div>
-            <img width="50" height="50" src="https://cdn.pixabay.com/photo/2016/04/13/14/27/google-chrome-1326908_960_720.png" alt="">
-            <div class="name"> Google Account</div>
+            <img width="50" height="50" src="{{password.logo}}" alt="">
+            <div class="name"> {{password.name}}</div>
+            <!-- password modal-->
+            <input type="email" name="email" value="{{password.email}}"><i class="fas fa-copy copy" title="copy to clipboard"></i>
+            <input type="password" name="username" value="{{password.password}}"><i class="fas fa-copy copy" title="copy to clipboard"></i>
+        
         </div>
-        <div class="card">
-            <div class="actions">&nbsp;Actions <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                <a href="" class="action-item">Delete</a>
-                <a href="" class="action-item">View</a>
-                <a href="" class="action-item">Update</a>
-            </div>
-            <img width="50" height="50" src="https://cdn.pixabay.com/photo/2016/04/13/14/27/google-chrome-1326908_960_720.png" alt="">
-            <div class="name"> Google Account</div>
-        </div>
-        <div class="card">
-            <div class="actions">&nbsp;Actions <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                <a href="" class="action-item">Delete</a>
-                <a href="" class="action-item">View</a>
-                <a href="" class="action-item">Update</a>
-            </div>
-            <img width="50" height="50" src="https://cdn.pixabay.com/photo/2016/04/13/14/27/google-chrome-1326908_960_720.png" alt="">
-            <div class="name"> Google Account</div>
-        </div>
-        <div class="card">
-            <div class="actions">&nbsp;Actions <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                <a href="" class="action-item">Delete</a>
-                <a href="" class="action-item">View</a>
-                <a href="" class="action-item">Update</a>
-            </div>
-            <img width="50" height="50" src="https://cdn.pixabay.com/photo/2016/04/13/14/27/google-chrome-1326908_960_720.png" alt="">
-            <div class="name"> Google Account</div>
-        </div>
-        <div class="card">
-            <div class="actions">&nbsp;Actions <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                <a href="" class="action-item">Delete</a>
-                <a href="" class="action-item">View</a>
-                <a href="" class="action-item">Update</a>
-            </div>
-            <img width="50" height="50" src="https://cdn.pixabay.com/photo/2016/04/13/14/27/google-chrome-1326908_960_720.png" alt="">
-            <div class="name"> Google Account</div>
-        </div>
-        <div class="card">
-            <div class="actions">&nbsp;Actions <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                <a href="" class="action-item">Delete</a>
-                <a href="" class="action-item">View</a>
-                <a href="" class="action-item">Update</a>
-            </div>
-            <img width="50" height="50" src="https://cdn.pixabay.com/photo/2016/04/13/14/27/google-chrome-1326908_960_720.png" alt="">
-            <div class="name"> Google Account</div>
-        </div>
-        <div class="card">
-            <div class="actions">&nbsp;Actions <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                <a href="" class="action-item">Delete</a>
-                <a href="" class="action-item">View</a>
-                <a href="" class="action-item">Update</a>
-            </div>
-            <img width="50" height="50" src="https://cdn.pixabay.com/photo/2016/04/13/14/27/google-chrome-1326908_960_720.png" alt="">
-            <div class="name"> Google Account</div>
-        </div>
-        <div class="card">
-            <div class="actions">&nbsp;Actions <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                <a href="" class="action-item">Delete</a>
-                <a href="" class="action-item">View</a>
-                <a href="" class="action-item">Update</a>
-            </div>
-            <img width="50" height="50" src="https://cdn.pixabay.com/photo/2016/04/13/14/27/google-chrome-1326908_960_720.png" alt="">
-            <div class="name"> Google Account</div>
-        </div>
-        <div class="card">
-            <div class="actions">&nbsp;Actions <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                <a href="" class="action-item">Delete</a>
-                <a href="" class="action-item">View</a>
-                <a href="" class="action-item">Update</a>
-            </div>
-            <img width="50" height="50" src="https://cdn.pixabay.com/photo/2016/04/13/14/27/google-chrome-1326908_1280.png" alt="">
-            <div class="name"> Google Account</div>
-        </div>
-        <div class="card">
-            <div class="actions">&nbsp;Actions <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                <a href="" class="action-item">Delete</a>
-                <a href="" class="action-item">View</a>
-                <a href="" class="action-item">Update</a>
-            </div>
-            <img width="50" height="50" src="https://cdn.pixabay.com/photo/2016/04/13/14/27/google-chrome-1326908_1280.png" alt="">
-            <div class="name"> Google Account</div>
-        </div>
-        <div class="card">
-            <div class="actions">&nbsp;Actions <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                <a href="" class="action-item">Delete</a>
-                <a href="" class="action-item">View</a>
-                <a href="" class="action-item">Update</a>
-            </div>
-            <img width="50" height="50" src="https://cdn.pixabay.com/photo/2016/04/13/14/27/google-chrome-1326908_1280.png" alt="">
-            <div class="name"> Google Account</div>
-        </div>
-        <div class="card">
-            <div class="actions">&nbsp;Actions <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                <a href="" class="action-item">Delete</a>
-                <a href="" class="action-item">View</a>
-                <a href="" class="action-item">Update</a>
-            </div>
-            <img width="50" height="50" src="https://cdn.pixabay.com/photo/2016/04/13/14/27/google-chrome-1326908_1280.png" alt="">
-            <div class="name"> Google Account</div>
-        </div>
+        
+        {% endfor %}
+
     </div>
 
     <!-- Footer Block-->
@@ -233,5 +152,6 @@
             <i class="fas fa-user-secret" aria-hidden="true"></i>
             <span>Secretary</span>
     </footer>
+    
 </body>
 </html> 

@@ -57,28 +57,26 @@
 
 - [ ] The web app should has following functions:
   
-  - [x] Login
+  - [x] **Login**
     - [x] Return msg when username or password is incorrect
-    - [x] Use OTP (HOST is outlook) to send confirmation email
+    - [x] Use **OTP** (HOST is outlook) to send confirmation email
       - [x] Return msg when verifitation failed
       - [x] Return msg when verification succeeded
-  - [x] Register
+  - [x] **Register**
     - [x] Return msg when duplicated username
     - [x] Return msg when passwords do not match
     - [x] Return msg when duplicated email
     - [x] Welome msg when register successfully
-  - [x] Logout
+  - [x] **Logout**
     - [x] Return msg when loggout
-  - [x] Add a new password
+  - [x] **Add a new password**
     - [x] Use **RSA** algorithm to encrypt the email and password when save them to DB
     - [x] Use **RSA** algorithm to decrypt the encrypt email and password when extract them for view the stored passwords
-    - [x] Return msg when Add password succeed
+    - [x] Return msg when add a password succeed
     - [x] For each stored password, find the coresponding website Icon
-    - [ ] 
-  - [ ] Delete a password
-  - [ ] Update a password
-  - [ ] View all passwords
+  - [x] Delete a password
+    - [x] Return msg when delete a password succeed
 
 ## Requirements
 
-See requirements.txt
+See **requirements.txt**

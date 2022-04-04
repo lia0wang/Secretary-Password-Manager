@@ -96,7 +96,7 @@ def home(request):
             input_code = request.POST.get("code")
             user = request.POST.get("user")
             if input_code != global_OTP:
-                msg = f"Verification Failed:{input_code} is wrong"
+                msg = f"Verification Failed: {input_code} is wrong"
                 messages.error(request, msg)
                 return HttpResponseRedirect(request.path)
             else:
@@ -147,6 +147,13 @@ def home(request):
             messages.success(request, msg)
             return HttpResponseRedirect(request.path)
 
+        elif "delete" in request.POST:
+            to_delete = request.POST.get("password-id")
+            msg = f"Delete succeeded: {Password.objects.get(id=to_delete).name} deleted"
+            Password.objects.get(id=to_delete).delete()
+            messages.success(request, msg)
+            return HttpResponseRedirect(request.path)
+
     context = {}
     if request.user.is_authenticated:
         passwords = Password.objects.all().filter(user=request.user)
@@ -168,4 +175,4 @@ def home(request):
             "passwords":passwords,
         }   
 
-    return render(request, "home.html", context)
+    return render(request, "home.html", context) 
