@@ -17,6 +17,15 @@ from django.core.mail import send_mail
 browser = Browser()
 browser.set_handle_robots(False)
 
+#ecrypt data
+p_q = generate_two_primes()
+n = calculate_N(p_q)
+phi = calculate_phi(p_q)
+e = select_e(phi)
+d = mod_inverse(e, phi)
+public = (e, n)
+private = (d, n)
+
 def OTP_code_generator():
     digits="0123456789"
     OTP=""
@@ -103,14 +112,6 @@ def home(request):
             # print(email)
             # print(password)
             
-            #ecrypt data
-            p_q = generate_two_primes()
-            n = calculate_N(p_q)
-            phi = calculate_phi(p_q)
-            e = select_e(phi)
-            d = mod_inverse(e, phi)
-            public = (e, n)
-            private = (d, n)
             encrypted_email = encrypt_RSA(email, public)
             encrypted_password = encrypt_RSA(password, public)
 
@@ -126,30 +127,45 @@ def home(request):
             except:
                 icon = "https://cdn-icons-png.flaticon.com/128/1006/1006771.png"
 
-            # print(encrypted_email)
-            # print(encrypted_password)
             # print(title)
             # print(icon)
-            decrypt_email = decrypt_RSA(encrypted_email, private)
-            decrypt_password = decrypt_RSA(encrypted_password, private)
-            saved_email = ','.join(decrypt_email).replace(',','')
-            saved_password = ','.join(decrypt_password).replace(',','')
-
+            # saved_email = ''.join(str(c) for c in encrypted_email)
+            # saved_password = ''.join(str(c) for c in encrypted_password)
             # print(saved_email)
             # print(saved_password)
-
+            
             # Save data in database
             new_password = Password.objects.create(
                 user=request.user,
                 name=title,
                 logo=icon,
-                email= saved_email,
-                password= saved_password
+                email= encrypted_email,
+                password= encrypted_password,
             )
-            print(new_password)
-    
+
             msg = f"Add succeeded: Added new password for website - {title}"
             messages.success(request, msg)
             return HttpResponseRedirect(request.path)
 
-    return render(request, "home.html", {})
+    context = {}
+    if request.user.is_authenticated:
+        passwords = Password.objects.all().filter(user=request.user)
+        for password in passwords:
+            password.email = password.email[1:-1]
+            # print(password.email)
+            password.email = [int(x) for x in password.email.split(',') if x]
+            # print(password.email)
+            password.password = password.password[1:-1]
+            # print(password.password)
+            password.password = [int(x) for x in password.password.split(',') if x]
+            # print(password.password)
+            password.email = ','.join(decrypt_RSA(password.email, private)).replace(',','')
+            password.password = ','.join(decrypt_RSA(password.password, private)).replace(',','')
+            
+            # print(password.email)
+            # print(password.password)
+        context = {
+            "passwords":passwords,
+        }   
+
+    return render(request, "home.html", context)
