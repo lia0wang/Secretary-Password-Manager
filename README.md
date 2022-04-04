@@ -1,6 +1,6 @@
 # Secretary: A web app Password Manager
 
-<img src="./images/icon.png" alt="logo">
+<img src="./images/icon.png" alt="icon">
 
 *my something-awesome-project for COMP6441*
 
@@ -13,6 +13,11 @@
 ## Changes I made
 
 - Improve the algorithm and methods for the password security
+  
+  - Implemented the **RSA algorithm** in the **rsa.py** inside the **secretary** folder and
+    - import them to the backend, <img src="./images/import.png" alt="">
+    - encrypt the passwrod and email, <img src="./images/encrypt.png" alt="">
+    - decrypt them when saving them into the DataBase, <img src="./images/decrypt.png" alt="">
 
 - Wrote automation tests to test the api of the password manager
 
@@ -43,6 +48,8 @@
   - [x] Login
     - [x] Return msg when username or password is incorrect
     - [x] Use OTP (HOST is outlook) to send confirmation email
+      - [x] Return msg when verifitation failed
+      - [x] Return msg when verification succeeded
   - [x] Register
     - [x] Return msg when duplicated username
     - [x] Return msg when passwords do not match
