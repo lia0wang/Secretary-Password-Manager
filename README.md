@@ -15,10 +15,21 @@
 - Improve the algorithm and methods for the password security
   
   - Implemented the **RSA algorithm** in the **rsa.py** inside the **secretary** folder and
-    - import them to the backend, <img src="./images/import.png" alt="">
-    - encrypt the passwrod and email, <img src="./images/encrypt.png" alt="">
-    - decrypt them when saving them into the DataBase, <img src="./images/decrypt.png" alt="">
-    - succeed output: <img src="./images/succeed_output.png" alt="">
+    - Import them to the backend, <img src="./images/import.png" alt="">
+    - Encrypt the passwrod and email and store the encrypt info into Database
+    - <img src="./images/encrypt1.png" alt="">
+    - <img src="./images/encrypt2.png" alt="">
+    - Decrypt them when extracting them from the Database
+    - <img src="./images/decrypt.png" alt="">
+    - Succeed output:
+      - <img src="./images/output.png" alt="">, where
+      - The 1st two lines are **encrypt email** using **RSA**,
+      - The 2nd two lines are **encrypt password** for Youtube
+      - The final two lines are **decrypt email and password**
+
+- Wrote my own **OTP Generator** and use **HOST=OUTLOOK**
+  
+  - <img src="./images/OTP.png" alt="">
 
 - Wrote automation tests to test the api of the password manager
 
@@ -59,8 +70,11 @@
   - [x] Logout
     - [x] Return msg when loggout
   - [x] Add a new password
-    - [ ] Use **RSA** algorithm to encrypt and decrypt the email and password
-    - [ ] Return msg when Add password succeed
+    - [x] Use **RSA** algorithm to encrypt the email and password when save them to DB
+    - [x] Use **RSA** algorithm to decrypt the encrypt email and password when extract them for view the stored passwords
+    - [x] Return msg when Add password succeed
+    - [x] For each stored password, find the coresponding website Icon
+    - [ ] 
   - [ ] Delete a password
   - [ ] Update a password
   - [ ] View all passwords
