@@ -19,6 +19,7 @@
     - Encrypt the passwrod and email and store the encrypt info into Database
     - <img src="./images/encrypt1.png" alt="">
     - <img src="./images/encrypt2.png" alt="">
+    - <img src="./images/encrypt3.png" alt="">
     - Decrypt them when extracting them from the Database
     - <img src="./images/decrypt.png" alt="">
     - Succeed output:
