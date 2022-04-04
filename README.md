@@ -1,6 +1,6 @@
-# Secretary: A web app Password Manager
+<center><img src="./images/icon.png" alt="icon"><center>
 
-<img src="./images/icon.png" alt="icon">
+# Secretary: A web app Password Manager
 
 *my something-awesome-project for COMP6441*
 
