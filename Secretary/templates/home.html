@@ -40,20 +40,6 @@
         </nav>
     </header>
 
-    <div style="text-align: center;margin-top: 2rem;">
-        <h3>Welcome to Secretary</h3>
-    </div>
-
-    <div style="text-align: center;margin-top: 1rem;">
-        <h4>I am your personal password manager <3</h4>
-    </div>
-
-    <div style="text-align: center;margin-top: 5rem;">
-        <image src="../static/animation.gif" alt=""
-            width="200"    
-            hight="200">
-    </div>
-
     {% if messages %}
         <div class="messages" style="text-align: center;">
         {% for message in messages %}
@@ -138,8 +124,8 @@
             <div class="name"> {{password.name}}</div>
             <!-- password modal-->
             <input type="email" name="email" value="{{password.email}}"><i class="fas fa-copy copy" title="copy to clipboard"></i>
-            <input type="password" name="username" value="{{password.password}}"><i class="fas fa-copy copy" title="copy to clipboard"></i>
-        
+            <input type="username" name="username" value="{{password.password}}"><i class="fas fa-copy copy" title="copy to clipboard"></i>
+
         </div>
         
         {% endfor %}
