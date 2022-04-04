@@ -1,4 +1,4 @@
-<center><img src="./images/icon.png" alt="icon"><center>
+<p align="center"><img src="./images/icon.png" alt="icon"></p>
 
 # Secretary: A web app Password Manager
 
