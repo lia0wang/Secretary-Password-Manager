@@ -104,13 +104,14 @@
         </div>
       
         <div class="modal" id="add-password-modal">
-            <form action=""> 
+            <form action="." role="form" method="POST">
+                {% csrf_token %}
                 <h2>Add new password</h2>
                 <input type="text" name="url" placeholder="url of website">
-                <input type="email" name="email" placeholder="email">
+                <input type="email" name="email" placeholder="email">      
                 <input type="password" name="password" placeholder="password">
-                <input type="submit" value="save"> 
-            </form>  
+                <input type="submit" value="save" name="add-password">
+            </form>
         </div>
     
     </div>
