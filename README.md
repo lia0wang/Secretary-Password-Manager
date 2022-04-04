@@ -18,6 +18,7 @@
     - import them to the backend, <img src="./images/import.png" alt="">
     - encrypt the passwrod and email, <img src="./images/encrypt.png" alt="">
     - decrypt them when saving them into the DataBase, <img src="./images/decrypt.png" alt="">
+    - succeed output: <img src="./images/succeed_output.png" alt="">
 
 - Wrote automation tests to test the api of the password manager
 
@@ -57,7 +58,9 @@
     - [x] Welome msg when register successfully
   - [x] Logout
     - [x] Return msg when loggout
-  - [ ] Add a new password
+  - [x] Add a new password
+    - [ ] Use **RSA** algorithm to encrypt and decrypt the email and password
+    - [ ] Return msg when Add password succeed
   - [ ] Delete a password
   - [ ] Update a password
   - [ ] View all passwords
