@@ -128,3 +128,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "secretary_manager@outlook.com"
 EMAIL_HOST_PASSWORD = "comp6441"
 EMAIL_USE_TLS = True
+
+# Heroku settings.
+import django_heroku
+django_heroku.settings(locals())
