@@ -15,63 +15,63 @@
 ## Changes I made
 
 ### Backend
+
+- [x] Improve the password security by using **RSA algorithm**
   
-  - [x] Improve the password security by using **RSA algorithm**
+  - [x] Import it to the backend
     
-    - [x] Import it to the backend
-      
-      - <img src="./images/import.png" alt="">
-    
-    - [x] Encrypt the passwrod and email and store the encrypt info into Database
-      
-      - <img src="./images/encrypt1.png" alt="">
-      - <img src="./images/encrypt2.png" alt="">
-      - <img src="./images/encrypt3.png" alt="">
-    
-    - [x] Decrypt them when extracting them from the Database
-      
-      - <img src="./images/decrypt.png" alt="">
-    
-    - [x] Succeed output:
-      
-      - <img src="./images/output.png" alt="">
-        
-        - The 1st two lines are **encrypt email** using **RSA**,
-        - The 2nd two lines are **encrypt password** for Youtube
-        - The final two lines are **decrypt email and password**
+    - <img src="./images/import.png" alt="">
   
-  - [x] Wrote my own **OTP Generator**
-  
-  - [x] Use **HOST=OUTLOOK**
+  - [x] Encrypt the passwrod and email and store the encrypt info into Database
     
-    - <img src="./images/OTP.png" alt="">
+    - <img src="./images/encrypt1.png" alt="">
+    - <img src="./images/encrypt2.png" alt="">
+    - <img src="./images/encrypt3.png" alt="">
+  
+  - [x] Decrypt them when extracting them from the Database
+    
+    - <img src="./images/decrypt.png" alt="">
+  
+  - [x] Succeed output:
+    
+    - <img src="./images/output.png" alt="">
+      
+      - The 1st two lines are **encrypt email** using **RSA**,
+      - The 2nd two lines are **encrypt password** for Youtube
+      - The final two lines are **decrypt email and password**
+
+- [x] Wrote my own **OTP Generator**
+
+- [x] Use **HOST=OUTLOOK**
+  
+  - <img src="./images/OTP.png" alt="">
 
 ### Frontend
-  
-  - [x] Use my own design for the UI
-  - [x] Update the script.js to fix bugs that:
-    - When switching modals from one to another, the modal that was open before is not closed:
-    - <img title="" src="./images/bug1.png" alt="logo" width="237">
+
+- [x] Use my own design for the UI
+- [x] Update the script.js to fix bugs that:
+  - When switching modals from one to another, the modal that was open before is not closed:
+  - <img title="" src="./images/bug1.png" alt="logo" width="237">
 
 ### Testing
-  
-  - [ ] Wrote automation tests using selenium to test the API
-    - [ ] Login
-      - [ ] Enter the wrong user name
-      - [ ] Enter the wrong password
-    - [ ] Register
-      - [ ] Enter different password into the confirmation box
-      - [ ] Enter invalid email
-      - [ ] Register the same username and email twice
-    - [ ] Logout
-    - [ ] Add a new password
-      - [ ] Add multiple passwords
-      - [ ] Examine if the stored password and email are correct
-    - [ ] Delete a pass word
+
+- [x] Wrote automation tests using selenium to test the API
+  - [x] Login
+    - [ ] Enter the wrong user name
+    - [ ] Enter the wrong password
+  - [x] Register
+    - [ ] Enter different password into the confirmation box
+    - [ ] Enter invalid email
+    - [ ] Register the same username and email twice
+  - [x] Logout
+  - [x] Add a new password
+    - [x] Add multiple passwords
+    - [x] Examine if the stored password and email are correct
+  - [x] Delete a pass word
 
 ### Deployment
-  
-  - [x] Make a deployment on Heroku
+
+- [x] Make a deployment on Heroku
 
 ## What to achieve
 
