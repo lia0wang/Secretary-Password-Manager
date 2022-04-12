@@ -73,7 +73,7 @@ if __name__ == "__main__":
         private = (d, n)
 
         msg = "ldl@qad.com"
-        msg2 = "Lw03260326,./"
+        msg2 = "Ldkjsalkda,./"
 
         encrypt_msg = encrypt_RSA(msg, public)
         encrypt_msg2 = encrypt_RSA(msg2, public)
