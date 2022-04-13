@@ -2,6 +2,7 @@
 v1.0 tests for secretary - https://secretary-password-manager.herokuapp.com/
 powered by https://github.com/lia0wang
 '''
+import random
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from webdriver_manager.firefox import GeckoDriverManager
@@ -9,9 +10,10 @@ from time import sleep
 import os
 
 # user dict
+num = random.randint(50,100)
 user_dict = {
-    "user_name": "BOT_LEON_5",
-    "email": "botleon5@secretarytesting.com",
+    "user_name": f"BOT_LEON_{num}",
+    "email": f"botleon{num}@secretarytesting.com",
     "password": "iamabot",
     "password2": "iamabot"
 }
@@ -50,7 +52,7 @@ def setup_driver():
 def go_web_page(driver, website):
     # go to my websites
     driver.get(website)
-    sleep(10)
+    sleep(1)
 
 def register(driver, user_dict):
     driver.find_element_by_xpath("/html/body/header/nav/ul/li[3]/a").click()
@@ -61,7 +63,7 @@ def register(driver, user_dict):
     driver.find_element_by_xpath("/html/body/div[1]/div[2]/form/input[5]").send_keys(user_dict["password2"])
     sleep(0.5)
     driver.find_element_by_xpath("/html/body/div[1]/div[2]/form/input[6]").click()
-    sleep(10)
+    sleep(1)
 
 def add_password(driver, new_passwords):
     for pasword in new_passwords:
@@ -73,7 +75,7 @@ def add_password(driver, new_passwords):
         sleep(0.5)
         driver.find_element_by_xpath("/html/body/div[2]/div[3]/form/input[5]").click()
         sleep(0.5)
-    sleep(15)
+        sleep(1)
 
 def go_view_then_go_home(driver):
     driver.find_element_by_xpath("/html/body/header/nav/ul/li[3]/a").click()
@@ -99,7 +101,7 @@ def verify_password_email(driver, new_passwords):
     sleep(1)
 
 def delete_password(driver):
-    driver.find_element_by_xpath("/html/body/div[3]/div[1]/div[1]").click()
+    driver.find_element_by_xpath("/html/body/div[3]/div[1]/div[1]/i").click()
     sleep(0.5)
     driver.find_element_by_xpath("/html/body/div[3]/div[1]/div[1]/a").click()
     sleep(1)
